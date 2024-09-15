@@ -72,7 +72,7 @@ export default function Home() {
         <form className="flex gap-4 flex-col" onSubmit={handleSubmit}>
           <Textarea
             label="Enter a description"
-            className="w-full text-black"
+            className="w-full text-black text-lg"
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
@@ -90,7 +90,7 @@ export default function Home() {
             onChange={(e) => setNumOfEmojis(e.target.value)}
             min="1"
             max="30"
-            className="w-full text-black"
+            className="w-full text-black text-lg"
             variant="bordered"
           />
           <div className="flex gap-2">

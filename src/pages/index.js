@@ -8,9 +8,6 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log("home prompt", prompt);
-  console.log("home emojis", emojis);
-
   const emojisTest = [
     // "🧪🔬📊🔍📝📈📉📏📐🔩🧬🏷️📋📜🗂️🔎📅✏️🔗📊",
     // "🧪🔬📊🔍📝📈📉📏📐🔩🧬🏷️📋📜🗂️🔎📅✏️🔗📊📅✏️🔗📊📅✏️🔗📊",
@@ -27,14 +24,12 @@ export default function Home() {
     // "🧪🔬🧫🧪🧬🔭⚗️🧪👩‍🔬👨‍🔬📊📈📉📝🔍",
   ];
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
-      // Send prompt to API route
       const response = await fetch("/api/getEmojis", {
         method: "POST",
         headers: {
@@ -59,20 +54,19 @@ export default function Home() {
 
   const handleClearEmojis = () => {
     setEmojis([]);
-    setPrompt(""); // Optionally clear the prompt as well
+    setPrompt("");
   };
 
   return (
     <div className="h-screen w-full bg-black flex flex-col items-center justify-center py-10 px-4 md:px-8">
       <div className="w-full max-w-3xl p-4 bg-white shadow-lg overflow-auto rounded-lg">
         <h1 className="text-2xl text-black font-semibold text-center mb-4">
-          Get Emojis from Sentence
+          Get Emojis from Prompt
         </h1>
-
         <form className="flex gap-4 flex-col" onSubmit={handleSubmit}>
           <Textarea
             label="Enter a description"
-            className="w-full text-black text-lg"
+            className="w-full text-black text-base"
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
@@ -82,7 +76,6 @@ export default function Home() {
             maxLength={500}
             variant="bordered"
           />
-
           <Input
             label="Number of emojis"
             type="number"
@@ -90,7 +83,7 @@ export default function Home() {
             onChange={(e) => setNumOfEmojis(e.target.value)}
             min="1"
             max="30"
-            className="w-full text-black text-lg"
+            className="w-full text-black text-base"
             variant="bordered"
           />
           <div className="flex gap-2">

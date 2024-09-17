@@ -3,12 +3,8 @@ import OpenAI from "openai";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { prompt, numOfEmojis } = req.body;
-
     try {
-      // Initialize OpenAI API client
       const openAI = new OpenAI(process.env.OPENAI_API_KEY);
-
-      // Call OpenAI API with the input prompt
       const completion = await openAI.chat.completions.create({
         messages: [
           {
@@ -23,11 +19,7 @@ export default async function handler(req, res) {
         ],
         model: "gpt-4o-mini",
       });
-
-      // Extract emojis from OpenAI's response
       const emojis = completion.choices[0].message.content.trim();
-
-      // Return the emojis to the client
       res.status(200).json({ emojis });
     } catch (error) {
       console.error("Error with OpenAI API:", error);

@@ -1,3 +1,5 @@
+🤓👨‍💻📊💻📈📡🔍📱💾📅🔧🖥️🗄️
+
 # Emoji AI Wrapper
 Emoji AI Wrapper is a simple and fun tool that allows users to input any sentence and get a corresponding set of emojis. These emojis can be easily copied and pasted wherever you'd like, making it perfect for spicing up your conversations, posts, or projects!
 

@@ -18,7 +18,7 @@ export default async function handler(req, res) {
           },
           {
             role: "user",
-            content: `Give me ${numOfEmojis} emojis that match this sentence: ${prompt}. No words at all or spaces or random characters. Only emojis. There should be no duplicate emojis and each time i regenerate the emojis, it should be different.`,
+            content: `Give me ${numOfEmojis} emojis that match this sentence: ${prompt}. No words, no letters, no spaces and no random characters. Only emojis. There should be no duplicate emojis and each time I regenerate the emojis, it should be different.`,
           },
         ],
         model: "gpt-4o-mini",

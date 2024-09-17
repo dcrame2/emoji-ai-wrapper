@@ -109,7 +109,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           {emojis &&
-            emojis.reverse().map((emoji, index) => (
+            emojis.map((emoji, index) => (
               <Snippet
                 key={index}
                 hideSymbol
